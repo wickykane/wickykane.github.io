@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Porfolio</title>
+    <link rel="stylesheet" href="./node_modules/animate.css/animate.min.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/styles/main.css">
     <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400i" rel="stylesheet">
 </head>
@@ -81,17 +83,39 @@
             <main>
                 <div class="introduction">
                     <section class="hello">
-                        <div class="padding">
+                        <div class="padding wow jackInTheBox">
                             <h1>HE<br>LLO<span class="dot">.</span></h1>
                         </div>
                         <span class="scrolldown">
-                            <i class="arrow"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="18" viewBox="0 0 17 10">
-                                    <path class="cls-1" d="M6.22,8.75,3.37,5.89H17V4.12H3.37L6.22,1.25,5,0,0,5l5,5Z"></path>
-                                </svg></i>
-                            <span class="txt"><span>S</span><span>c</span><span>r</span><span>o</span><span>l</span><span>l</span></span>
+                                <span class="txt"><span>S</span><span>c</span><span>r</span><span>o</span><span>l</span><span>l</span></span>
+                            <span class="scroll-container animated infinite bounce duration-2s">
+                                    <i class="arrow"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="18" viewBox="0 0 17 10">
+                                        <path class="cls-1" d="M6.22,8.75,3.37,5.89H17V4.12H3.37L6.22,1.25,5,0,0,5l5,5Z"></path>
+                                    </svg></i>
+                            </span>
+                         
                         </span>
                         <div class="right-color"></div>
                     </section>
+                    <section class="objective">
+                        <div class="padding">
+                            <span class="block-title">
+                                <i class="icon waves">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="33" height="7" viewBox="0 0 73.94 14.19">
+                                      <polyline points="2.83 2.83 11.36 11.36 19.9 2.83 28.43 11.36 36.97 2.83 45.5 11.36 54.04 2.83 62.58 11.36 71.11 2.83"></polyline>
+                                  </svg>
+                              </i>
+                            </span>
+                            <p><div class="wow" style="display: block; text-align: start; position: relative;"><span style="transform: matrix(1, 0, 0, 1, 0, 0);"><strong>Wokine est une agence digitale globale</strong><span style="transform: matrix(1, 0, 0, 1, 0, 0);">et un startup studio, alliant innovation,</span></span></div><div style="display: block; text-align: start; position: relative;"><span style="transform: matrix(1, 0, 0, 1, 0, 0);"><span style="transform: matrix(1, 0, 0, 1, 0, 0);">modernisme et esthétisme.</span></span></div></p>
+                        </div>
+                    </section>
+                </div>
+                <div class="skills">
+                    <img class="img-fluid" src="https://www.wokine.com/wp-content/themes/wokine/temp/home/video-visuel.jpg" alt="visuel" size="100w" srcset="
+                        https://www.wokine.com/wp-content/themes/wokine/assets/pages/home/video-visuel-large.jpg,
+                        https://www.wokine.com/wp-content/themes/wokine/assets/pages/home/video-visuel.jpg 1400w,
+                        https://www.wokine.com/wp-content/themes/wokine/assets/pages/home/video-visuel-mobile.jpg 600w" 
+                    >
                 </div>
             </main>
         </div>
@@ -103,5 +127,11 @@
         </div>
     </div>
 </body>
-
+<script src="./node_modules/jquery/dist/jquery.min.js"></script>
+<script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="./node_modules/gsap/src/minified/TweenMax.min.js"></script>
+<script src="./node_modules/wow.js/dist/wow.min.js"></script>
+<script src="./assets/scripts/swiper.min.js"></script>
+<script src="./assets/scripts/lazysizes.min.js"></script>
+<script src="./assets/scripts/home.js"></script>
 </html>
