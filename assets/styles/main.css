@@ -49,6 +49,21 @@ h4 {
 .show-loading .loading {
   -webkit-transform: translate(0) !important;
           transform: translate(0) !important;
+  z-index: 99999;
+}
+
+.hover-menu .page-menu {
+  -webkit-transform: translate(calc(-100% + 95px)) !important;
+          transform: translate(calc(-100% + 95px)) !important;
+}
+
+.open-menu .logo {
+  z-index: 499 !important;
+}
+
+.open-menu .page-menu {
+  -webkit-transform: translate(0) !important;
+          transform: translate(0) !important;
 }
 
 .loading {
@@ -61,12 +76,12 @@ h4 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #ff5851;
-  z-index: 99999;
+  background-color: #01cffe;
+  z-index: 99;
   -webkit-transform: translate(-100%);
           transform: translate(-100%);
-  -webkit-transition: all 1000ms cubic-bezier(1, 0, 0, 1) 0ms;
-  transition: all 1000ms cubic-bezier(1, 0, 0, 1) 0ms;
+  -webkit-transition: all 1500ms cubic-bezier(1, 0, 0, 1) 0ms;
+  transition: all 1500ms cubic-bezier(1, 0, 0, 1) 0ms;
 }
 
 .loading img {
@@ -142,9 +157,25 @@ h4 {
   z-index: 10;
 }
 
+.home-page .page-container .page-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100vh;
+  background: #fff;
+  -webkit-transform: translate(-100%);
+          transform: translate(-100%);
+  z-index: 500;
+  -webkit-transition: -webkit-transform 500ms cubic-bezier(1, 0, 0, 1) 0ms;
+  transition: -webkit-transform 500ms cubic-bezier(1, 0, 0, 1) 0ms;
+  transition: transform 500ms cubic-bezier(1, 0, 0, 1) 0ms;
+  transition: transform 500ms cubic-bezier(1, 0, 0, 1) 0ms, -webkit-transform 500ms cubic-bezier(1, 0, 0, 1) 0ms;
+}
+
 .home-page .page-container .page-header .logo {
   position: fixed;
-  z-index: 1000;
+  z-index: 501;
   line-height: 40px;
   height: 40px;
   left: 40px;
@@ -153,11 +184,34 @@ h4 {
 .home-page .page-container .page-header .menu {
   position: fixed;
   top: 50%;
+  left: 10px;
   height: 40px;
   width: 40px;
   -webkit-transform: translate(50%, -50%);
           transform: translate(50%, -50%);
-  z-index: 500;
+  z-index: 501;
+}
+
+.home-page .page-container .page-header .menu:hover .txt span:nth-child(1) {
+  -webkit-transform: translateY(-10px) !important;
+          transform: translateY(-10px) !important;
+}
+
+.home-page .page-container .page-header .menu:hover .txt span:nth-child(3) {
+  -webkit-transform: translateY(-5px) !important;
+          transform: translateY(-5px) !important;
+}
+
+.home-page .page-container .page-header .menu:hover .line:nth-child(1) {
+  width: 20px !important;
+}
+
+.home-page .page-container .page-header .menu:hover .line:nth-child(2) {
+  width: 35px !important;
+}
+
+.home-page .page-container .page-header .menu:hover .line:nth-child(3) {
+  width: 25px !important;
 }
 
 .home-page .page-container .page-header .menu .icon {
@@ -178,10 +232,19 @@ h4 {
   letter-spacing: 0.25em;
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
-  font-size: 0.7em;
+  font-size: 0.5em;
   color: #1c1b20;
-  left: 10px;
+  left: 20px;
   top: 10px;
+  width: 40px;
+  -webkit-transition: -webkit-transform 500ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
+  transition: -webkit-transform 500ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
+  transition: transform 500ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
+  transition: transform 500ms cubic-bezier(0.7, 0, 0.3, 1) 0ms, -webkit-transform 500ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
+}
+
+.home-page .page-container .page-header .menu .icon + .txt span {
+  display: inline-block;
   -webkit-transition: -webkit-transform 500ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
   transition: -webkit-transform 500ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
   transition: transform 500ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
@@ -191,16 +254,12 @@ h4 {
 .home-page .page-container .page-header .menu .icon .line {
   float: right;
   background: #1c1b20;
-  -webkit-transition: all 400ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
-  transition: all 400ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
   height: 2px;
   width: 16px;
   margin-bottom: 3px;
   clear: right;
-  -webkit-transition: -webkit-transform 500ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
-  transition: -webkit-transform 500ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
-  transition: transform 500ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
-  transition: transform 500ms cubic-bezier(0.7, 0, 0.3, 1) 0ms, -webkit-transform 500ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
+  -webkit-transition: all 400ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
+  transition: all 400ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
 }
 
 .home-page .page-container .page-header .menu .icon .line:nth-child(2) {

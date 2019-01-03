@@ -84,6 +84,19 @@ $(document).ready(function() {
     hoverOnly: true
   });
 
+  // Hover Menu
+  $("body").on("click", function(e) {
+    if (!$(".page-menu")[0].contains(e.target)) {
+      $("body").removeClass("open-menu");
+    }
+  });
+  $(".page-header .menu").on("click", function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    $("body").toggleClass("open-menu");
+  }).on('mouseenter mouseleave', function() {
+    $("body").toggleClass("hover-menu");
+  });
   // Remove Loading
   setTimeout(function() {
     $(".show-loading").toggleClass("show-loading");
