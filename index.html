@@ -5,17 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Porfolio</title>
+    <title>Portfolio</title>
     <link rel="stylesheet" href="./node_modules/animate.css/animate.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/styles/loading.css"/>
     <link rel="stylesheet" href="./assets/styles/main.css">
     <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400i" rel="stylesheet">
 </head>
 
-<body class="home-page show-hello">
+<body class="home-page show-hello show-loading">
     <div class="page-container">
-        <div class="loading"></div>
+        <div class="loading">
+            <div style="display: block; margin: 0 auto; width: 500px;">
+                <div class="ld ld-wander-h" style="animation-duration:2s">
+                    <img src="./assets/images/loading.svg">
+                </div>
+            </div>
+            <!-- <img src="./assets/images/loading.svg" alt=""/> -->
+        </div>
         <div class="page-header">
             <a href="/" class="logo">
                 <svg width="85" height="10" viewBox="0 0 165 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -105,7 +113,7 @@
                             <p class="content">
                                 <span class="name text-uppercase"> My name is <span>Dao Quang Huy</span>.</span>
                                 <br>
-                                <span class="title text-uppercase">And I am a Web Developer</span>
+                                <span class="title text-uppercase"></span>
                             </p>
                             <p class="quote-text">
                                 <span><i class="fas fa-quote-left"></i></span><span class="quote-content">Good, better, best. Never let it rest. 'Til your good is better and your better is best.</span><span><i class="fas fa-quote-right"></i></span></p>
@@ -133,6 +141,8 @@
 <script src="./assets/scripts/swiper.min.js"></script>
 <script src="./assets/scripts/lazysizes.min.js"></script>
 <script src="./node_modules/parallax-js/dist/parallax.min.js"></script>
+<script src="./assets/scripts/jquery.pagepiling.js"></script>
+<script src="./node_modules/typed.js/lib/typed.min.js"></script>
 <script src="./assets/scripts/home.js"></script>
 
 </html>
