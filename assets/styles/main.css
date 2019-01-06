@@ -490,7 +490,7 @@ h4 {
   margin: 0 auto;
 }
 
-.home-page .page-container .page-content .skills {
+.home-page .page-container .page-content .cloud {
   margin-top: 200vh;
   position: relative;
   z-index: 10;
@@ -536,28 +536,246 @@ h4 {
   z-index: 100;
 }
 
-.about {
+.about,
+.experience {
   position: relative;
   z-index: 100;
   background: #f8f8f8;
   padding: 40px 120px 80px 120px;
 }
 
-.about h1, .about .block-title {
+.about h1,
+.about .block-title,
+.experience h1,
+.experience .block-title {
   font-family: GilroyHeavy, sans-serif;
   font-size: 3.5rem;
   color: #ffc107;
 }
 
-.about .ldBar-label {
+.about .ldBar-label,
+.experience .ldBar-label {
   display: none;
 }
 
-.about .skill-label {
+.about .skill-label,
+.experience .skill-label {
   margin-top: -25px;
   top: 20px;
   position: relative;
   text-transform: uppercase;
   margin-left: 25px;
+}
+
+.experience {
+  background: #ffc107;
+}
+
+.experience h1,
+.experience .block-title {
+  color: #fff;
+  text-align: right;
+  display: block;
+}
+
+.mario-container {
+  position: relative;
+  overflow: hidden;
+  height: 500px;
+  width: 100%;
+  margin-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mario-container .welcome .mario-character {
+  left: 0% !important;
+}
+
+.mario-container .education .message-board.education {
+  -webkit-transform: translate(0) !important;
+          transform: translate(0) !important;
+}
+
+.mario-container .education .mario-character {
+  left: 50% !important;
+}
+
+.mario-container .fast .message-board.fast {
+  -webkit-transform: translate(0) !important;
+          transform: translate(0) !important;
+}
+
+.mario-container .fast .mario-character {
+  left: 50% !important;
+}
+
+.mario-container .ants .message-board.ants {
+  -webkit-transform: translate(0) !important;
+          transform: translate(0) !important;
+}
+
+.mario-container .ants .mario-character {
+  left: 50% !important;
+}
+
+.mario-container .seldat .message-board.seldat {
+  -webkit-transform: translate(0) !important;
+          transform: translate(0) !important;
+}
+
+.mario-container .seldat .mario-character {
+  left: 50% !important;
+}
+
+.mario-container .mario-loading .mario-character {
+  -webkit-animation: marioMove 2s steps(5) infinite, marioMoveIn 2.5s 1 !important;
+          animation: marioMove 2s steps(5) infinite, marioMoveIn 2.5s 1 !important;
+}
+
+.mario-container .mario-map {
+  background: url(../images/backgrounds.png) no-repeat 0 0;
+  width: 512px;
+  height: 431px;
+  overflow: hidden;
+  background-position: -2px -3px;
+  display: block;
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  margin: 30px auto;
+  position: relative;
+}
+
+.mario-container .mario-map .sprite {
+  position: absolute;
+  height: 100%;
+  -webkit-transition: -webkit-transform 1000ms cubic-bezier(0.7, 0, 0.3, 1) 50ms;
+  transition: -webkit-transform 1000ms cubic-bezier(0.7, 0, 0.3, 1) 50ms;
+  transition: transform 1000ms cubic-bezier(0.7, 0, 0.3, 1) 50ms;
+  transition: transform 1000ms cubic-bezier(0.7, 0, 0.3, 1) 50ms, -webkit-transform 1000ms cubic-bezier(0.7, 0, 0.3, 1) 50ms;
+  width: 50px;
+}
+
+.mario-container .mario-map .cloud-mario {
+  background-image: url(../images/mario.png);
+  background-position: 0 100%;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 55px;
+  left: 50px;
+}
+
+.mario-container .mario-map .pipe-mario {
+  background-image: url(../images/mario.png);
+  background-position: 8px 288px;
+  width: 39px;
+  height: 32px;
+  position: absolute;
+  bottom: 45px;
+  left: 50%;
+  -webkit-transition: -webkit-transform 1000ms cubic-bezier(0.7, 0, 0.3, 1) 50ms;
+  transition: -webkit-transform 1000ms cubic-bezier(0.7, 0, 0.3, 1) 50ms;
+  transition: transform 1000ms cubic-bezier(0.7, 0, 0.3, 1) 50ms;
+  transition: transform 1000ms cubic-bezier(0.7, 0, 0.3, 1) 50ms, -webkit-transform 1000ms cubic-bezier(0.7, 0, 0.3, 1) 50ms;
+}
+
+.mario-container .mario-map .message-board {
+  font-family: "Press Start 2P", cursive;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.5);
+  width: 140px;
+  height: 100px;
+  font-size: 5px;
+  padding: 5px;
+  bottom: 0;
+  -webkit-transform: translate(200%);
+          transform: translate(200%);
+  -webkit-transition: -webkit-transform 1000ms cubic-bezier(0.7, 0, 0.3, 1) 50ms;
+  transition: -webkit-transform 1000ms cubic-bezier(0.7, 0, 0.3, 1) 50ms;
+  transition: transform 1000ms cubic-bezier(0.7, 0, 0.3, 1) 50ms;
+  transition: transform 1000ms cubic-bezier(0.7, 0, 0.3, 1) 50ms, -webkit-transform 1000ms cubic-bezier(0.7, 0, 0.3, 1) 50ms;
+}
+
+.mario-container .mario-map .message-board p {
+  margin-bottom: 5px;
+}
+
+.mario-container .mario-map .control-keys {
+  position: absolute;
+  bottom: 80px;
+  right: 80px;
+}
+
+.mario-container .mario-map .control-keys a {
+  color: #fff;
+  font-size: 20px;
+}
+
+.mario-container .mario-map .control-keys a:hover {
+  color: #01cffe;
+}
+
+.mario-container .mario-map .mario-character {
+  background: url(../images/character.png) 0 0 no-repeat;
+  -webkit-animation: marioMove 3s steps(5) infinite;
+          animation: marioMove 3s steps(5) infinite;
+  width: 85px;
+  height: 175px;
+  -webkit-transform: scale(0.2);
+          transform: scale(0.2);
+  bottom: -20px;
+  left: 0px;
+  position: absolute;
+  -webkit-transition: left 2s linear, -webkit-transform 1000ms cubic-bezier(0.7, 0, 0.3, 1) 50ms;
+  transition: left 2s linear, -webkit-transform 1000ms cubic-bezier(0.7, 0, 0.3, 1) 50ms;
+  transition: left 2s linear, transform 1000ms cubic-bezier(0.7, 0, 0.3, 1) 50ms;
+  transition: left 2s linear, transform 1000ms cubic-bezier(0.7, 0, 0.3, 1) 50ms, -webkit-transform 1000ms cubic-bezier(0.7, 0, 0.3, 1) 50ms;
+  left: -100px;
+}
+
+.mario-container .mario-map .round-label {
+  margin-top: 100px;
+  text-align: center;
+}
+
+@-webkit-keyframes marioMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -510px 0;
+  }
+}
+
+@keyframes marioMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -510px 0;
+  }
+}
+
+@-webkit-keyframes marioMoveIn {
+  0% {
+    left: 50%;
+  }
+  100% {
+    left: 150%;
+  }
+}
+
+@keyframes marioMoveIn {
+  0% {
+    left: 50%;
+  }
+  100% {
+    left: 150%;
+  }
 }
 /*# sourceMappingURL=main.css.map */

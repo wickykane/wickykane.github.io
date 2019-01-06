@@ -1,5 +1,5 @@
-var prllxSkillContainer;
-
+var prllxCloudContainer;
+var round = 0;
 $(document).ready(function() {
   // Scroll To Top Default
   $("body,html").animate(
@@ -10,9 +10,11 @@ $(document).ready(function() {
   );
 
   function initHome() {
-    prllxSkillContainer = TweenLite.to(".skills img", 1, { yPercent: 50, ease: Linear.easeNone, paused: true });
-    TweenLite.ticker.addEventListener("tick", onScroll);
-
+    prllxCloudContainer = TweenLite.to(".cloud img", 1, {
+      yPercent: 50,
+      ease: Linear.easeNone,
+      paused: true
+    });
     function onScroll() {
       scrollTop = $(window).scrollTop();
       if (scrollTop > 10 && $("body").hasClass("show-hello")) {
@@ -20,7 +22,7 @@ $(document).ready(function() {
       } else if (scrollTop <= 10 && !$("body").hasClass("show-hello")) {
         $("body").addClass("show-hello");
       }
-  
+
       if (
         scrollTop > $(".objective").outerHeight() &&
         scrollTop < $(".objective").outerHeight() + wH
@@ -37,17 +39,19 @@ $(document).ready(function() {
         TweenLite.to($(".hello"), 0, { y: 0, ease: Linear.easeNone });
         TweenLite.to($(".objective"), 0, { y: 0, ease: Linear.easeNone });
       }
-  
-      var minSkill = $(".skills").offset().top;
-      var maxSkill = $(".skills").offset().top + $(".skills").outerHeight();
-      var normSkill = clamp(
-        normalize(window.pageYOffset, minSkill, maxSkill),
+
+      var minCloud = $(".cloud").offset().top;
+      var maxCloud = $(".cloud").offset().top + $(".cloud").outerHeight();
+      var normCloud = clamp(
+        normalize(window.pageYOffset, minCloud, maxCloud),
         0,
         1
       );
-      prllxSkillContainer.progress(normSkill);
+      prllxCloudContainer.progress(normCloud);
     }
-  
+    setTimeout(function() {
+      TweenLite.ticker.addEventListener("tick", onScroll);
+    });
   }
   function normalize(value, min, max) {
     return (value - min) / (max - min);
@@ -74,16 +78,14 @@ $(document).ready(function() {
     wH = $(window).height();
   });
 
-
   $(window).trigger("resize");
 
-  
   // Parrallax
   var objective = $(".objective.scence")[0];
   new Parallax(objective, {
     // relativeInput: true,
     hoverOnly: true,
-    clipRelativeInput: true,
+    clipRelativeInput: true
   });
 
   // Hover Menu
@@ -92,16 +94,107 @@ $(document).ready(function() {
       $("body").removeClass("open-menu");
     }
   });
-  $(".page-header .menu").on("click", function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    $("body").toggleClass("open-menu");
-  }).on('mouseenter mouseleave', function() {
-    $("body").toggleClass("hover-menu");
-  });
+  $(".page-header .menu")
+    .on("click", function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      $("body").toggleClass("open-menu");
+    })
+    .on("mouseenter mouseleave", function() {
+      $("body").toggleClass("hover-menu");
+    });
   // Remove Loading
   setTimeout(function() {
     $(".show-loading").toggleClass("show-loading");
     initHome();
+    skrollr.init({
+      smoothScrolling: false,
+      mobileDeceleration: 0.004
+    });
   }, 500);
+
+  var roundList = ["education", "fast", "ants", "seldat"];
+  var marioSprite = $(".mario-character");
+
+  $(".control-keys #right-control").on("click", function() {
+    ++round;
+    round = Math.min(Math.max(round, 0), roundList.length);
+
+    var label = $(".round-label");
+    label.text("ROUND " + round);
+    if (round > 1) {
+      $(".mario-map")
+        .removeClass()
+        .addClass("mario-map")
+        .addClass("mario-loading");
+
+      setTimeout(function() {
+        $(".mario-map")
+          .removeClass()
+          .addClass("mario-map")
+          .addClass(roundList[round - 1]);
+      }, 3000);
+    } else {
+      $(".mario-map")
+        .removeClass()
+        .addClass("mario-map")
+        .addClass(roundList[round - 1]);
+    }
+
+    label.css("animation-name", "");
+    label
+      .removeClass("slideInUp")
+      .delay(100)
+      .queue(function() {
+        $(this)
+          .addClass("animated slideInUp")
+          .dequeue();
+      });
+  });
+
+  $(".control-keys #left-control").on("click", function() {
+    --round;
+    round = Math.min(Math.max(round, 0), roundList.length);
+
+    var label = $(".round-label");
+    label.text("ROUND " + round);
+
+    if (round == 0) {
+      label.text("WELCOME !!!");
+      $(".mario-map")
+      .removeClass()
+      .addClass("mario-map")
+      .addClass("welcome");
+      return;
+    }
+
+    if (round >= 1) {
+      $(".mario-map")
+        .removeClass()
+        .addClass("mario-map")
+        .addClass("mario-loading");
+
+      setTimeout(function() {
+        $(".mario-map")
+          .removeClass()
+          .addClass("mario-map")
+          .addClass(roundList[round - 1]);
+      }, 3000);
+    } else {
+      $(".mario-map")
+        .removeClass()
+        .addClass("mario-map")
+        .addClass(roundList[round - 1]);
+    }
+
+    label.css("animation-name", "");
+    label
+      .removeClass("slideInUp")
+      .delay(100)
+      .queue(function() {
+        $(this)
+          .addClass("animated slideInUp")
+          .dequeue();
+      });
+  });
 });
