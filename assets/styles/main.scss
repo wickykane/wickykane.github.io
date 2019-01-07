@@ -351,9 +351,13 @@ h4 {
         min-height: 100vh;
         z-index: 10;
         overflow: hidden;
-        -webkit-transition: -webkit-transform 1000ms cubic-bezier(1, 0, 0, 1) 0ms, padding 500ms cubic-bezier(1, 0, 0, 1) 0ms;
-        -moz-transition: -moz-transform 1000ms cubic-bezier(1, 0, 0, 1) 0ms, padding 500ms cubic-bezier(1, 0, 0, 1) 0ms;
-        transition: transform 1000ms cubic-bezier(1, 0, 0, 1) 0ms, padding 500ms cubic-bezier(1, 0, 0, 1) 0ms;
+        -webkit-transition: -webkit-transform 1000ms cubic-bezier(1, 0, 0, 1)
+            0ms,
+          padding 500ms cubic-bezier(1, 0, 0, 1) 0ms;
+        -moz-transition: -moz-transform 1000ms cubic-bezier(1, 0, 0, 1) 0ms,
+          padding 500ms cubic-bezier(1, 0, 0, 1) 0ms;
+        transition: transform 1000ms cubic-bezier(1, 0, 0, 1) 0ms,
+          padding 500ms cubic-bezier(1, 0, 0, 1) 0ms;
       }
       .introduction {
         position: relative;
@@ -498,7 +502,7 @@ h4 {
           }
         }
       }
-      .skills {
+      .cloud {
         margin-top: 200vh;
         position: relative;
         z-index: 10;
@@ -559,12 +563,14 @@ h4 {
   }
 }
 
-.about {
+.about,
+.experience {
   position: relative;
   z-index: 100;
   background: #f8f8f8;
   padding: 40px 120px 80px 120px;
-  h1,.block-title {
+  h1,
+  .block-title {
     font-family: GilroyHeavy, sans-serif;
     font-size: 3.5rem;
     color: #ffc107;
@@ -578,5 +584,175 @@ h4 {
     position: relative;
     text-transform: uppercase;
     margin-left: 25px;
+  }
+}
+
+.experience {
+  background: #ffc107;
+  h1,
+  .block-title {
+    color: #fff;
+    text-align: right;
+    display: block;
+  }
+}
+
+.mario-container {
+  position: relative;
+  overflow: hidden;
+  height: 500px;
+  width: 100%;
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+
+  .welcome {
+    .mario-character {
+      left: 0% !important;
+    }
+  }
+
+  .education {
+    .message-board.education {
+      transform: translate(0) !important;
+    }
+    .mario-character {
+      left: 50% !important;
+    }
+  }
+
+  .fast {
+    .message-board.fast {
+      transform: translate(0) !important;
+    }
+    .mario-character {
+      left: 50% !important;
+    }
+  }
+
+  .ants {
+    .message-board.ants {
+      transform: translate(0) !important;
+    }
+    .mario-character {
+      left: 50% !important;
+    }
+  }
+
+  .seldat {
+    .message-board.seldat {
+      transform: translate(0) !important;
+    }
+    .mario-character {
+      left: 50% !important;
+    }
+  }
+
+  .mario-loading {
+    .mario-character {
+      animation:marioMove 2s steps(5) infinite,  marioMoveIn 2.5s 1 !important;
+    }
+  }
+  .mario-map {
+    background: url(../images/backgrounds.png) no-repeat 0 0;
+    width: 512px;
+    height: 431px;
+    overflow: hidden;
+    background-position: -2px -3px;
+    display: block;
+    transform: scale(1.5);
+    margin: 30px auto;
+    position: relative;
+
+    .sprite {
+      position: absolute;
+      height: 100%;
+      transition: transform 1000ms cubic-bezier(0.7, 0, 0.3, 1) 50ms;
+      width: 50px;
+    }
+
+    .cloud-mario {
+      background-image: url(../images/mario.png);
+      background-position: 0 100%;
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      top: 55px;
+      left: 50px;
+    }
+
+    .pipe-mario {
+      background-image: url(../images/mario.png);
+      background-position: 8px 288px;
+      width: 39px;
+      height: 32px;
+      position: absolute;
+      bottom: 45px;
+      left: 50%;
+      transition: transform 1000ms cubic-bezier(0.7, 0, 0.3, 1) 50ms;
+    }
+
+    .message-board {
+      font-family: "Press Start 2P", cursive;
+      position: absolute;
+      background: rgba(255, 255, 255, 0.5);
+      width: 140px;
+      height: 100px;
+      font-size: 5px;
+      padding: 5px;
+      bottom: 0;
+      transform: translate(200%);
+      p {
+        margin-bottom: 5px;
+      }
+      transition: transform 1000ms cubic-bezier(0.7, 0, 0.3, 1) 50ms;
+    }
+    .control-keys {
+      position: absolute;
+      bottom: 80px;
+      right: 80px;
+      a {
+        color: #fff;
+        font-size: 20px;
+        &:hover {
+          color: #01cffe;
+        }
+      }
+    }
+    .mario-character {
+      background: url(../images/character.png) 0 0 no-repeat;
+      animation: marioMove 3s steps(5) infinite;
+      width: 85px;
+      height: 175px;
+      transform: scale(0.2);
+      bottom: -20px;
+      left: 0px;
+      position: absolute;
+      transition: left 2s linear,
+        transform 1000ms cubic-bezier(0.7, 0, 0.3, 1) 50ms;
+      left: -100px;
+    }
+    .round-label {
+      margin-top: 100px;
+      text-align: center;
+    }
+  }
+}
+
+@keyframes marioMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -510px 0;
+  }
+}
+
+@keyframes marioMoveIn {
+  0% {
+    left: 50%;
+  }
+  100% {
+    left: 150%;
   }
 }
