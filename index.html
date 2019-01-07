@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Portfolio</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/scripts/loading-bar.css">
     <link rel="stylesheet" href="./node_modules/animate.css/animate.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
@@ -124,16 +126,50 @@
                 <div class="skills">
                     <img class="img-fluid" src="./assets/images/cloud.jpg" alt="visuel" size="100w">
                 </div>
-                <div class="about">
-                    <div class="padding">
-                        <span class="block-title">
-                                <i class="icon waves">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="33" height="7" viewBox="0 0 73.94 14.19">
-                                        <polyline points="2.83 2.83 11.36 11.36 19.9 2.83 28.43 11.36 36.97 2.83 45.5 11.36 54.04 2.83 62.58 11.36 71.11 2.83"></polyline>
-                                    </svg>
-                                </i>
-                            </span>
-                        <h1>ABOUT <br>ME</h1>
+                  <div class="about">
+                    <span class="wow slideInLeft block-title" data-wow-duration="1s" data-wow-delay=".5s">
+                        <i class="icon waves">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="33" height="7" viewBox="0 0 73.94 14.19">
+                              <polyline points="2.83 2.83 11.36 11.36 19.9 2.83 28.43 11.36 36.97 2.83 45.5 11.36 54.04 2.83 62.58 11.36 71.11 2.83"></polyline>
+                          </svg>
+                      </i>
+                    </span>
+                    <h1 class="wow slideInUp" data-wow-duration="1s" data-wow-delay=".5s">ABOUT <br> ME</h1>
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <p id="about-me"></p>
+                            <p class="wow slideInUp" data-wow-duration="1s" data-wow-delay=".5s">I guess you're here because you want to know a bit about me. Right? <br>
+                                Hmm... I will show you some.
+                            </p>
+                            <p  class="wow slideInUp" data-wow-duration="1s" data-wow-delay=".7s">
+                                <strong>I love solving problems.</strong> 
+                                Technology is growing so fast, and it changes our lives for the better. By apllying technology, Real-Life Problems can be solved easily.
+                            </p>
+                            <p  class="wow slideInUp" data-wow-duration="1s" data-wow-delay=".9s">
+                                <strong>I want to create value for lives.</strong> 
+                                Yup, there is a million ways. Being a web developer is one of them.
+                            </p>
+                            <p  class="wow slideInUp" data-wow-delay="1s">
+                                <strong>I desire to learn new things.</strong> 
+                                I always try to be the best version of me. The more I learn, The more I realize How much I don't know.
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <div class=" skill-label">Angular</div>
+                            <div data-stroke="#ffc107" class="ldBar" style="width:100%; height: inherit;" data-value="80"></div>
+                            <div class=" skill-label">Angular JS</div>
+                            <div data-stroke="#ffc107" class="ldBar" style="width:100%; height: inherit;" data-value="80"></div>
+                            <div class=" skill-label">React JS</div>
+                            <div data-stroke="#ffc107" class="ldBar" style="width:100%; height: inherit;" data-value="50"></div>
+                            <div class=" skill-label">HTML/CSS3/Javascript</div>
+                            <div data-stroke="#ffc107" class="ldBar" style="width:100%; height: inherit;" data-value="80"></div>
+                            <div class=" skill-label">Node JS</div>
+                            <div data-stroke="#ffc107" class="ldBar" style="width:100%; height: inherit;" data-value="40"></div>
+                            <div class=" skill-label">Java</div>
+                            <div data-stroke="#ffc107" class="ldBar" style="width:100%; height: inherit;" data-value="40"></div>
+                            <div class=" skill-label">C#</div>
+                            <div data-stroke="#ffc107" class="ldBar" style="width:100%; height: inherit;" data-value="40"></div>
+                        </div>
                     </div>
                 </div>
             </main>
@@ -168,6 +204,7 @@
 <script src="./node_modules/parallax-js/dist/parallax.min.js"></script>
 <script src="./assets/scripts/jquery.pagepiling.js"></script>
 <script src="./node_modules/typed.js/lib/typed.min.js"></script>
+<script src="./assets/scripts/loading-bar.js"></script>
 <script src="./assets/scripts/home.js"></script>
 
 </html>
