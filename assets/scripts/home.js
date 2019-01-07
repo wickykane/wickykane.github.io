@@ -1,5 +1,15 @@
 $(document).ready(function() {
   // Scroll To Top Default
+  var prllxAbouts, prllxSkillContainer;
+  prllxSkillContainer = TweenLite.to(".skills img", 1, { yPercent: 10, ease: Linear.easeNone, paused: true });
+  TweenLite.set(".about .padding", { y: "25%" });
+  prllxAbouts = TweenLite.to(".about .padding", 1, {
+    y: "-25%",
+    ease: Linear.easeNone,
+    paused: true
+  });
+
+
   $("body,html").animate(
     {
       scrollTop: 0
@@ -43,12 +53,6 @@ $(document).ready(function() {
       $("body").addClass("show-hello");
     }
 
-    //PRLLX VIDEOCONTAINER
-    var prllxSkillContainer = TweenLite.to(".skills img", 1, {
-      yPercent: 0,
-      ease: Linear.easeNone,
-      paused: true
-    });
 
     if (
       scrollTop > $(".objective").outerHeight() &&
@@ -75,6 +79,16 @@ $(document).ready(function() {
       1
     );
     prllxSkillContainer.progress(normSkill);
+
+    //PRLLX ABOUT
+    var minAbout = $(".about").offset().top - wH;
+    var maxAbout = $(".about").offset().top + $(".about").outerHeight();
+    var normAbout = clamp(
+      normalize(window.pageYOffset, minAbout, maxAbout),
+      0,
+      1
+    );
+    prllxAbouts.progress(normAbout);
   }
 
   // Parrallax
@@ -90,15 +104,19 @@ $(document).ready(function() {
       $("body").removeClass("open-menu");
     }
   });
-  $(".page-header .menu").on("click", function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    $("body").toggleClass("open-menu");
-  }).on('mouseenter mouseleave', function() {
-    $("body").toggleClass("hover-menu");
-  });
+  $(".page-header .menu")
+    .on("click", function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      $("body").toggleClass("open-menu");
+    })
+    .on("mouseenter mouseleave", function() {
+      $("body").toggleClass("hover-menu");
+    });
   // Remove Loading
   setTimeout(function() {
     $(".show-loading").toggleClass("show-loading");
   }, 500);
+
+ 
 });
