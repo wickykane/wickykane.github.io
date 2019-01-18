@@ -1,0 +1,31 @@
+{
+  "name": "porfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "animate.css": "^3.7.0",
+    "bootstrap": "^4.2.1",
+    "gh-pages": "^2.0.1",
+    "gsap": "^2.0.2",
+    "jquery": "^3.3.1",
+    "parallax-js": "^3.1.0",
+    "typed.js": "^2.0.9",
+    "wow.js": "^1.2.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gh-pages"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wickykane/wickykane.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wickykane/wickykane.github.io/issues"
+  },
+  "homepage": "https://wickykane.github.io/"
+}
